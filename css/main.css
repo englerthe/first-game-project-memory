@@ -6,7 +6,7 @@ html {
 #main_game {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: baseline;
 }
 
 #memory_board {
@@ -27,4 +27,13 @@ html {
     margin:10px;
     padding:20px;
     font-size:64px;
+  }
+  .front {
+    background-size: contain; 
+  }
+
+  #finished {
+    color:red;
+    font-size: 50px;
+    font-weight: bold;
   }
