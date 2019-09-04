@@ -1,0 +1,30 @@
+html {
+    background: url("../img/background.jpg") no-repeat;
+    background-size: cover;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+#main_game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#memory_board {
+    background: rgba(255, 255, 255, 0.5);;
+    width:800px;
+    height:540px;
+    padding:10px;
+    margin:0px 10px;
+    border-radius: 84px;
+    box-shadow: inset 0px 0px 20px -6px rgba(97,89,97,1);
+  }
+
+  .card .back {
+    background-color: rgba(12, 156, 240, 0.5);
+    width:70px;
+    height:70px;
+    float:left;
+    margin:10px;
+    padding:20px;
+    font-size:64px;
+  }
