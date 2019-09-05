@@ -9,11 +9,13 @@ class players {
 
     checkIfPair(card1, card2) {
         this.pairsClicked +=1;
-        document.getElementById("pairs_clicked").innerHTML = this.pairsClicked;
+        console.log(this.name);
+        document.getElementById(`pairs_clicked_${this.name}`).innerHTML = this.pairsClicked;
         this.pickedCards = [card1, card2];
         if (this.pickedCards[0].getAttribute("name") === this.pickedCards[1].getAttribute("name")) {
           this.pairsGuessed +=1;
-          document.getElementById("pairs_guessed").innerHTML = this.pairsGuessed;
+          this.game.countPairsGuessed += 1;
+          document.getElementById(`pairs_guessed_${this.name}`).innerHTML = this.pairsGuessed;
           return true;
         }
         return false;
@@ -28,9 +30,9 @@ class players {
         this.pickedCards.push(card);
         if (this.pickedCards.length == 2) {
           if (this.checkIfPair(this.pickedCards[0], this.pickedCards[1]) == false ) { //check if selected cards are not equal
-          //console.log(this.pickedCards);  
+          console.log(this.pickedCards);  
             this.flipCardsBack();
-          } else {
+          } else { // if cards are equal (a pair)
             this.isFinished();
             this.pickedCards = [];
           console.log(this.pairsGuessed);  
@@ -41,11 +43,10 @@ class players {
     isFinished() {
         if (this.pairsClicked < 1) {
           return false;
-        } else if (this.pairsGuessed < this.game.cards.length/2) {
+        } else if (this.game.countPairsGuessed < this.game.cards.length/2) {
           return false;
         }
-        document.querySelector('#finished').innerHTML = `Player ${this.name} hat gewonnen !`;
-        //location.reload();
+        document.querySelector('#finished').innerHTML = `<p>Player ${this.name} hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
         // return true;
       }
 

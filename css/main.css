@@ -3,24 +3,31 @@ html {
     background-size: cover;
     font-family: "Helvetica Neue", Arial, sans-serif;
   }
+
+#start_game {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  color: red;
+}
+
 #main_game {
     display: flex;
     flex-direction: row;
-    justify-content: baseline;
 }
 
 #memory_board {
-    background: rgba(255, 255, 255, 0.5);;
+    background: rgba(255, 255, 255, 0.5);
     width:800px;
     height:540px;
     padding:10px;
     margin:0px 10px;
-    border-radius: 84px;
-    box-shadow: inset 0px 0px 20px -6px rgba(97,89,97,1);
+    border-radius: 40px;
+    box-shadow: inset 0px 0px 20px -6px #8f8f8f;
   }
 
   .card .back {
-    background-color: rgba(12, 156, 240, 0.5);
+    background-color: rgba(12, 156, 240, 0.3);
     width:70px;
     height:70px;
     float:left;
@@ -37,3 +44,28 @@ html {
     font-size: 50px;
     font-weight: bold;
   }
+ button {
+    display: inline-block;
+    border: none;
+    padding: 4px 8px;
+    margin: 0;
+    text-decoration: none;
+    background: rgba(12, 156, 240, 0.3);
+    color: red;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  #score {
+    background: rgba(255, 255, 255, 0.8);
+    width:200px;
+    height:540px;
+    padding:10px;
+    border-radius: 40px;
+    box-shadow: inset 0px 0px 20px -6px #8f8f8f;
+    color:red;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

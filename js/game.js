@@ -4,11 +4,12 @@ class MemoryGame {
       this.players = players;
       this.turn = 0;
       this.activePlayer = players[this.turn];
+      this.countPairsGuessed = 0;
     }
     startPlay() {
       this.shuffleCards();
     }
-
+    
     // general function
     shuffleCards() {
       let newCards = [];
@@ -21,9 +22,9 @@ class MemoryGame {
     }
   
     switchPlayer(){
-      alert("naechster Spieler");
       this.turn += 1;
       if (this.turn > this.players.length-1) {this.turn = 0;}
       this.activePlayer = this.players[this.turn];
+      alert(`naechster Spieler: ${this.activePlayer.name}`);
     }
 };
