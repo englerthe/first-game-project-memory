@@ -4,20 +4,20 @@ html {
     font-family: "Helvetica Neue", Arial, sans-serif;
   }
 
-#start_game {
-  display: flex;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.5);
-  color: red;
-}
+#initial_load {
+    display: flex;
+    flex-direction: column;
+  }
 
 #main_game {
     display: flex;
     flex-direction: row;
 }
-#initial_load {
+#start_game {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  color: red;
 }
 
 #memory_board {

@@ -9,7 +9,6 @@ class players {
 
     checkIfPair(card1, card2) {
         this.pairsClicked +=1;
-        console.log(this.name);
         document.getElementById(`pairs_clicked_${this.name}`).innerHTML = this.pairsClicked;
         this.pickedCards = [card1, card2];
         if (this.pickedCards[0].getAttribute("name") === this.pickedCards[1].getAttribute("name")) {
@@ -29,13 +28,11 @@ class players {
         card.parentNode.childNodes[1].className = "back";
         this.pickedCards.push(card);
         if (this.pickedCards.length == 2) {
-          if (this.checkIfPair(this.pickedCards[0], this.pickedCards[1]) == false ) { //check if selected cards are not equal
-          console.log(this.pickedCards);  
+          if (this.checkIfPair(this.pickedCards[0], this.pickedCards[1]) == false ) { //check if selected cards are not equal  
             this.flipCardsBack();
           } else { // if cards are equal (a pair)
             this.isFinished();
-            this.pickedCards = [];
-          console.log(this.pairsGuessed);  
+            this.pickedCards = []; 
           }
         }
     }
@@ -47,7 +44,6 @@ class players {
           return false;
         }
         document.querySelector('#finished').innerHTML = `<p>Player ${this.name} hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
-        // return true;
       }
 
     flipCardsBack() {
@@ -60,6 +56,4 @@ class players {
             this.game.switchPlayer(); // initiate to change player // flip selected cards back
         }, 200);
     } 
-    
-
 }

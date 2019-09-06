@@ -24,23 +24,20 @@ const cards = [
     { name: 'rottweiler',      img: 'rottweiler.jpg' },
     { name: 'yorkshire',       img: 'yorkshire.jpg' }
   ];
-
-// load   
-
-
+  
 // load cards and start game
-document.addEventListener("DOMContentLoaded", () => {
-    let player1 = new players("PLAYER1");
-    let player2 = new players("PLAYER2");
-    //let player3 = new players("PLAYER3");
-    //let player4 = new players("PLAYER4");
-    let memoryGame = new MemoryGame(cards, [player1, player2]);
-    player1.game = memoryGame;
-    player2.game = memoryGame;
-    //player3.game = memoryGame;
-    //player4.game = memoryGame;
+function startGame(handoverplayers) {
+  console.log(playersNames);
+  console.log(handoverplayers);
+  let player = [];
+  for (let i=0; i < handoverplayers.length; i++) {
+    player[i] = new players(`${handoverplayers[i]}`);
+  };
+    let memoryGame = new MemoryGame(cards, player);
+  for (let j=0; j < player.length; j++) {
+    player[j].game = memoryGame;
+  };
     memoryGame.startPlay();
-    console.log(memoryGame.players);
     
                               //create HTML
     //create Cards  
@@ -58,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
       html += `<div id="score">`; // begin score
       memoryGame.players.forEach(Player => {
         html += `<h2>${Player.name}</h2>`;
-        html += `<p>Pairs Clicked: <span id="pairs_clicked_${Player.name}" >0</span></p>`;
-        html += `<p>Pairs Guessed: <span id="pairs_guessed_${Player.name}" >0</span></p>`;
+        html += `<p>Anzahl Versuche: <span id="pairs_clicked_${Player.name}" >0</span></p>`;
+        html += `<p>Anzahl Paare gefunden: <span id="pairs_guessed_${Player.name}" >0</span></p>`;
       });
       html += `</div>`; // end score
       html += `</div>`; // end display_players
@@ -78,4 +75,4 @@ document.addEventListener("DOMContentLoaded", () => {
         memoryGame.activePlayer.cardClicked(card);
       };
     });
-  })
+  }

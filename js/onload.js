@@ -1,16 +1,15 @@
 
-
 document.addEventListener("DOMContentLoaded", () => {
                         //create HTML
 
 let initialhtml = '';
 initialhtml += `<div id="start_game">`; // begin start_game
-initialhtml += `<label><ul><li><input type="radio" name="Players" checked value="1Player">1 Player</li></ul></label>`;
-initialhtml += `<label><ul><li><input type="radio" name="Players" value="2Player">2 Player</li></ul></label>`;
-initialhtml += `<label><ul><li><input type="radio" name="Players" value="3Player">3 Player</li></ul></label>`;
-initialhtml += `<label><ul><li><input type="radio" name="Players" value="4Player">4 Player</li></ul></label>`;
+initialhtml += `<label><ul><li><input type="radio" name="Players" checked value="1">1 Spieler</li></ul></label>`;
+initialhtml += `<label><ul><li><input type="radio" name="Players" value="2">2 Spieler</li></ul></label>`;
+initialhtml += `<label><ul><li><input type="radio" name="Players" value="3">3 Spieler</li></ul></label>`;
+initialhtml += `<label><ul><li><input type="radio" name="Players" value="4">4 Spieler</li></ul></label>`;
 initialhtml += `</div>`; // end start_game
-initialhtml += `<button onclick="wievielPlayer()">Submit</button>`;
+initialhtml += `<button onclick="howManyPlayers()">Namen eingeben</button>`;
 initialhtml += `</container>`; // end main_game
 
 // Add all the divs to the HTML
@@ -18,15 +17,35 @@ document.querySelector('#initial_load').innerHTML = initialhtml;
 
   // end creation of HTML
 });
-
-function wievielPlayer(){
-    selectedPlayers = ``;
+let choosePlayerNumber = ``;
+function howManyPlayers(){
     var checkboxes = document.querySelectorAll('input');
-    console.log(checkboxes);
-    for (i=0; i < checkboxes.length; i++) {
+    for (let i=0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked === true) {
-            selectedPlayers = checkboxes[i].value; // geht noch nicht :(
+            choosePlayerNumber = parseInt(checkboxes[i].value);
         }
+    } 
+    let choosePlayerhtml =`<div id="start_game">`;
+    choosePlayerhtml +=`<form>`;
+    choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben</label><br><br>`;
+    for (let j = 1; j <= parseInt(choosePlayerNumber); j++) {
+        choosePlayerhtml +=`<label>Spieler ${j}</label>`;
+        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="30">`;
     }
-    console.log(selectedPlayers);
+    choosePlayerhtml +=`<br><button onclick="writePlayersAndStartGame()">Spiel starten</button>`;
+    choosePlayerhtml +=`</form>`;
+    choosePlayerhtml +=`</div>`;
+    document.querySelector('#initial_load').innerHTML = choosePlayerhtml;
 }
+
+let playersNames = [];
+function writePlayersAndStartGame() {
+    for (let k=1; k <= parseInt(choosePlayerNumber); k++) {
+        playersNames.push(document.getElementById(`player_${k}`).value);
+    }
+    startGame(playersNames);
+}
+
+
+
+

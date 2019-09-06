@@ -27,4 +27,6 @@ class MemoryGame {
       this.activePlayer = this.players[this.turn];
       alert(`naechster Spieler: ${this.activePlayer.name}`);
     }
+
+    
 };
