@@ -15,6 +15,10 @@ html {
     display: flex;
     flex-direction: row;
 }
+#initial_load {
+  display: flex;
+  flex-direction: column;
+}
 
 #memory_board {
     background: rgba(255, 255, 255, 0.5);
@@ -53,12 +57,14 @@ html {
     background: rgba(12, 156, 240, 0.3);
     color: red;
     font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
     text-align: center;
   }
   
   #score {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.3);
     width:200px;
     height:540px;
     padding:10px;
@@ -67,5 +73,9 @@ html {
     color:red;
     font-size: 20px;
     font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none;
   }
   

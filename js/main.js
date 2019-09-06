@@ -1,7 +1,7 @@
 const cards = [
     { name: 'schaeferhund',    img: 'schaeferhund.jpg' },
     { name: 'mops',            img: 'mops.jpg' },
-    /*{ name: 'bijon',           img: 'bijon.jpg' },
+    { name: 'bijon',           img: 'bijon.jpg' },
     { name: 'bobtail',         img: 'bobtail.jpg' },
     { name: 'dogge',           img: 'dogge.jpg' },
     { name: 'labrador',        img: 'labrador.jpg' },
@@ -10,10 +10,10 @@ const cards = [
     { name: 'dalmatiner',      img: 'dalmatiner.jpg' },
     { name: 'neufundlaender',  img: 'neufundlaender.jpg' },
     { name: 'rottweiler',      img: 'rottweiler.jpg' },
-    { name: 'yorkshire',       img: 'yorkshire.jpg' },*/
+    { name: 'yorkshire',       img: 'yorkshire.jpg' },
     { name: 'schaeferhund',    img: 'schaeferhund.jpg' },
     { name: 'mops',            img: 'mops.jpg' },
-    /*{ name: 'bijon',           img: 'bijon.jpg' },
+    { name: 'bijon',           img: 'bijon.jpg' },
     { name: 'bobtail',         img: 'bobtail.jpg' },
     { name: 'dogge',           img: 'dogge.jpg' },
     { name: 'labrador',        img: 'labrador.jpg' },
@@ -22,7 +22,7 @@ const cards = [
     { name: 'dalmatiner',      img: 'dalmatiner.jpg' },
     { name: 'neufundlaender',  img: 'neufundlaender.jpg' },
     { name: 'rottweiler',      img: 'rottweiler.jpg' },
-    { name: 'yorkshire',       img: 'yorkshire.jpg' }*/
+    { name: 'yorkshire',       img: 'yorkshire.jpg' }
   ];
 
 // load   
@@ -32,12 +32,12 @@ const cards = [
 document.addEventListener("DOMContentLoaded", () => {
     let player1 = new players("PLAYER1");
     let player2 = new players("PLAYER2");
-    let player3 = new players("PLAYER3");
+    //let player3 = new players("PLAYER3");
     //let player4 = new players("PLAYER4");
-    let memoryGame = new MemoryGame(cards, [player1, player2, player3]);
+    let memoryGame = new MemoryGame(cards, [player1, player2]);
     player1.game = memoryGame;
     player2.game = memoryGame;
-    player3.game = memoryGame;
+    //player3.game = memoryGame;
     //player4.game = memoryGame;
     memoryGame.startPlay();
     console.log(memoryGame.players);
