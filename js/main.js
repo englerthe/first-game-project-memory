@@ -42,13 +42,13 @@ function startGame(handoverplayers) {
                               //create HTML
       //create Popup
     let html = '';
-      /*html += `<container id="pop-up-window">`;
-      html += `<button onclick="showPopup()">show popup</button>`;
+      html += `<container id="pop-up-window">`;
+      html += `<button onclick="showPopup('mypopup')">show popup</button>`;
       html += `<div class="popup" id="mypopup">`;
       html += `<p>My popup!</p>`;
-      html += `<button onclick="hidePopup()">close popup</button>`;
+      html += `<button onclick="hidePopup('mypopup')">close popup</button>`;
       html += `</div>`;
-      html += `</container>`;*/
+      html += `</container>`;
       //create Cards
       html += `<div id="finished"></div>`; //finished
       html += `<div id="memory_board">`; //begin board
@@ -81,17 +81,5 @@ function startGame(handoverplayers) {
         memoryGame.activePlayer.cardClicked(card);
       };
     });
-    /*
-    let popupIDElement = document.getElementById("mypopup");
-    console.log(popupIDElement);
-
-    function showPopup() {
-    popupIDElement.style.display ='block';
-    }
-
-    function hidePopup() {
-    popupIDElement.style.display ='none';
-    }
-    */
   }
   
