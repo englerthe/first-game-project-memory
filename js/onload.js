@@ -51,12 +51,23 @@ function createPopupObjectFromID(id) { //handover "mypopup" id
 console.log(document.getElementById(id));
     return document.getElementById(id);
 } 
-function showPopup(id) {
+
+let orgPlayerText = "";
+let newPlayerText ="";
+
+function showPopup(id, name) {
+    orgPlayerText = document.getElementById("playertext");
+    console.log(orgPlayerText);
+    console.log(name);
+    newPlayerText = document.createTextNode(`Naechster Spieler: ${name}`);
+    console.log(newPlayerText);
+    orgPlayerText.appendChild(newPlayerText);
     createPopupObjectFromID(id).style.display ='block'; // show popup and block background(game)
+    
 }
 function hidePopup(id) {
     createPopupObjectFromID(id).style.display ='none'; // hide popup and reactivate background(game)
+    orgPlayerText.removeChild(newPlayerText);
+    console.log(`new playerText: ${newPlayerText}`);
+    console.log(document.getElementById("playertext"));
 }
-
-
-

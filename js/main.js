@@ -38,17 +38,8 @@ function startGame(handoverplayers) {
     player[j].game = memoryGame;
   };
     memoryGame.startPlay();
-
                               //create HTML
-      //create Popup
     let html = '';
-      html += `<container id="pop-up-window">`;
-      html += `<button onclick="showPopup('mypopup')">show popup</button>`;
-      html += `<div class="popup" id="mypopup">`;
-      html += `<p>My popup!</p>`;
-      html += `<button onclick="hidePopup('mypopup')">close popup</button>`;
-      html += `</div>`;
-      html += `</container>`;
       //create Cards
       html += `<div id="finished"></div>`; //finished
       html += `<div id="memory_board">`; //begin board
@@ -69,6 +60,14 @@ function startGame(handoverplayers) {
       html += `</div>`; // end score
       html += `</div>`; // end display_players
       html += `</container>`; // end main_game
+      //create Popup
+      html += `<container id="pop-up-window">`;
+      html += `<button onclick="showPopup('mypopup')"></button>`;
+      html += `<div class="popup" id="mypopup">`;
+      html += `<p id="playertext" ></p>`;
+      html += `<button onclick="hidePopup('mypopup')">OK !</button>`;
+      html += `</div>`;
+      html += `</container>`;
 
     // Add all the divs to the HTML
     document.querySelector('#main_game').innerHTML = html;

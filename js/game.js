@@ -25,7 +25,7 @@ class MemoryGame {
       this.turn += 1;
       if (this.turn > this.players.length-1) {this.turn = 0;}
       this.activePlayer = this.players[this.turn];
-      alert(`naechster Spieler: ${this.activePlayer.name}`);
+      showPopup('mypopup',this.activePlayer.name);
+      //alert(`naechster Spieler: ${this.activePlayer.name}`);
     }
-
 }
