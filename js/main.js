@@ -38,10 +38,18 @@ function startGame(handoverplayers) {
     player[j].game = memoryGame;
   };
     memoryGame.startPlay();
-    
+
                               //create HTML
-    //create Cards  
+      //create Popup
     let html = '';
+      /*html += `<container id="pop-up-window">`;
+      html += `<button onclick="showPopup()">show popup</button>`;
+      html += `<div class="popup" id="mypopup">`;
+      html += `<p>My popup!</p>`;
+      html += `<button onclick="hidePopup()">close popup</button>`;
+      html += `</div>`;
+      html += `</container>`;*/
+      //create Cards
       html += `<div id="finished"></div>`; //finished
       html += `<div id="memory_board">`; //begin board
       memoryGame.cards.forEach(pic => {
@@ -67,12 +75,23 @@ function startGame(handoverplayers) {
 
                             // end creation of HTML
 
-
-
     // Bind the click event of each element to a function
     document.querySelectorAll('.back').forEach( card => {
       card.onclick = () => {
         memoryGame.activePlayer.cardClicked(card);
       };
     });
+    /*
+    let popupIDElement = document.getElementById("mypopup");
+    console.log(popupIDElement);
+
+    function showPopup() {
+    popupIDElement.style.display ='block';
+    }
+
+    function hidePopup() {
+    popupIDElement.style.display ='none';
+    }
+    */
   }
+  

@@ -55,5 +55,6 @@ class players {
             this.pickedCards = [];
             this.game.switchPlayer(); // initiate to change player // flip selected cards back
         }, 200);
-    } 
+    }
+    
 }

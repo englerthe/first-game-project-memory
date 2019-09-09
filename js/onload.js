@@ -47,5 +47,15 @@ function writePlayersAndStartGame() {
 }
 
 
+function createPopupObjectFromID(id) { //handover "mypopup" id
+    return document.getElementById(id);
+} 
+function show(id) {
+    createPopupObjectFromID(id).style.display ='block'; // show popup and block background(game)
+}
+function hide(id) {
+    createPopupObjectFromID(id).style.display ='none'; // hide popup and reactivate background(game)
+}
+
 
 

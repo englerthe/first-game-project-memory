@@ -18,8 +18,14 @@
             <script type="text/javascript" src="js/main.js"></script>
     <container id="initial_load">
             <script type="text/javascript" src="js/onload.js"></script>
-    </container>
+    </container>       
     <container id="footer_information">
+        <!-- manual test for popup window-->
+            <a href="#" onclick="show(`mypopup`)">open popup</a>
+            <div class="popup" id="mypopup">
+                    <p>This is my popup!</p>
+                    <a href="#" onclick="hide(`mypopup`)">close popup</a>
+                  </div>
                 <!-- empty --> 
     </container>
 </body>

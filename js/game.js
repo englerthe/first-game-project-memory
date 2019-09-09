@@ -28,5 +28,4 @@ class MemoryGame {
       alert(`naechster Spieler: ${this.activePlayer.name}`);
     }
 
-    
 };
