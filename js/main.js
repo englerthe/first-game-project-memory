@@ -62,9 +62,9 @@ function startGame(handoverplayers) {
 
       //create Popup
       html += `<container id="pop-up-window">`;
-      html += `<button onclick="showPopup('mypopup')"></button>`;
+      html += `<button id="initialpopup" onclick="showPopup('mypopup')"></button>`;
       html += `<div class="popup" id="mypopup">`;
-      html += `<p id="playertext" ></p>`;
+      html += `<p id="playertext"></p>`;
       html += `<button onclick="hidePopup('mypopup')">OK !</button>`;
       html += `</div>`;
       html += `</container>`;

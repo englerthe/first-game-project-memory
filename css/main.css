@@ -14,6 +14,8 @@ h1 {
 
 ul {
   list-style-type: none;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
 }
 button {
   display: inline-block;
@@ -22,12 +24,19 @@ button {
   margin: 0;
   text-decoration: none;
   background: rgba(75, 135, 215, 0.1);
-  color: red;
-  font-family: sans-serif;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
+}
+label {
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+}
+#initialpopup {
+  visibility: hidden;
 }
 
 /* container */
@@ -41,7 +50,6 @@ button {
 }
 #start_game {
   display: flex;
-  justify-content: center;
   background: rgba(75, 135, 215, 0.1);
   color: red;
 }
@@ -54,11 +62,6 @@ button {
     border-radius: 40px;
     box-shadow: 2px 2px 4px 2px #666666;
 }
-#finished {
-    color:red;
-    font-size: 50px;
-    font-weight: bold;
-}
 #score {
   background: rgba(75, 135, 215, 0.2);
   width:300px;
@@ -70,6 +73,11 @@ button {
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
   font-size: 16px;
   font-weight: bold
+}
+#finished {
+  color:red;
+  font-size: 50px;
+  font-weight: bold;
 }
 #score_p_tag {
   margin-left: auto; 
@@ -95,14 +103,13 @@ button {
     display: none;
     position: fixed;
     padding: 10px;
-    width: 280px;
-    left: 50%;
-    margin-left: -150px;
-    height: 180px;
-    top: 50%;
-    margin-top: -100px;
-    background: #FFF;
+    width: 340px;
+    height: 150px;
+    left: 220px;
+    top: 300px;
     z-index: 1;
+    color: white;
+    text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
 }
 #mypopup:after {
     position: fixed;
@@ -111,7 +118,7 @@ button {
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.4);
     z-index: -2;
 }
 #mypopup:before {
@@ -121,7 +128,8 @@ button {
     left: 0;
     bottom: 0;
     right: 0;
-    background: #FFF;
+    background: rgba(75, 135, 215, 0.8);
+    box-shadow: inset 2px 2px 2px 2px #bebebe, 2px 2px 2px 2px rgba(75, 135, 215, 0.5);
     z-index: -1;
 }
   
