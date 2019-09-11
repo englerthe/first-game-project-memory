@@ -6,7 +6,8 @@ class players {
         this.pairsGuessed = 0;
         this.game = null;
     }
-
+    // game players logic
+    // check if cards are pairs
     checkIfPair(card1, card2) {
         this.pairsClicked +=1;
         document.getElementById(`pairs_clicked_${this.name}`).innerHTML = this.pairsClicked;
@@ -19,7 +20,7 @@ class players {
         }
         return false;
     }
-
+    // check how many cards clicked by player
     cardClicked(card) {
         if (this.pickedCards.length == 2) {
           return;
@@ -36,7 +37,7 @@ class players {
           }
         }
     }
-
+    // check if player has won
     isFinished() {
         if (this.pairsClicked < 1) {
           return false;
@@ -45,7 +46,7 @@ class players {
         }
         document.querySelector('#finished').innerHTML = `<p>Player ${this.name} hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
       }
-
+    // in case of no pairs, flip cards back after timeout - to memorize cards :-)
     flipCardsBack() {
         setTimeout( () => {
             this.pickedCards[0].className = "back";
@@ -54,7 +55,7 @@ class players {
             this.pickedCards[1].parentNode.childNodes[1].className = "front";
             this.pickedCards = [];
             this.game.switchPlayer(); // initiate to change player // flip selected cards back
-        }, 200);
+        }, 500);
     }
     
 }

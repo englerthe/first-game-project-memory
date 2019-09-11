@@ -27,18 +27,17 @@ const cards = [
   
 // load cards and start game
 function startGame(handoverplayers) {
-  console.log(playersNames);
-  console.log(handoverplayers);
   let player = [];
   for (let i=0; i < handoverplayers.length; i++) {
-    player[i] = new players(`${handoverplayers[i]}`);
+    player[i] = new players(`${handoverplayers[i]}`); //create players objects
   };
-    let memoryGame = new MemoryGame(cards, player);
+    let memoryGame = new MemoryGame(cards, player); //start game object
   for (let j=0; j < player.length; j++) {
-    player[j].game = memoryGame;
+    player[j].game = memoryGame; // set game constructor value for each player
   };
-    memoryGame.startPlay();
-                              //create HTML
+    memoryGame.startPlay(); //start game
+
+//create HTML
     let html = '';
       //create Cards
       html += `<div id="finished"></div>`; //finished
@@ -51,15 +50,16 @@ function startGame(handoverplayers) {
       });
       html += `</div>`; // end board
       html += `<div id="display_players">`; // begin display_players
-      html += `<div id="score">`; // begin score
+      html += `<div id="score">`; // begin scoreboard
       memoryGame.players.forEach(Player => {
-        html += `<h2>${Player.name}</h2>`;
-        html += `<p>Anzahl Versuche: <span id="pairs_clicked_${Player.name}" >0</span></p>`;
-        html += `<p>Anzahl Paare gefunden: <span id="pairs_guessed_${Player.name}" >0</span></p>`;
+        html += `<p id="score_p_tag">${Player.name}<br>`;
+        html += `Anzahl Versuche: <span id="pairs_clicked_${Player.name}" >0</span><br>`;
+        html += `Anzahl Paare gefunden: <span id="pairs_guessed_${Player.name}" >0</span></p>`;
       });
-      html += `</div>`; // end score
+      html += `</div>`; // end scoreboard
       html += `</div>`; // end display_players
       html += `</container>`; // end main_game
+
       //create Popup
       html += `<container id="pop-up-window">`;
       html += `<button onclick="showPopup('mypopup')"></button>`;
@@ -72,7 +72,7 @@ function startGame(handoverplayers) {
     // Add all the divs to the HTML
     document.querySelector('#main_game').innerHTML = html;
 
-                            // end creation of HTML
+// end creation of HTML
 
     // Bind the click event of each element to a function
     document.querySelectorAll('.back').forEach( card => {

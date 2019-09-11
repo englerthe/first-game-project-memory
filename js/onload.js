@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-                        //create HTML
+//create HTML
 
 let initialhtml = '';
 initialhtml += `<div id="start_game">`; // begin start_game
@@ -15,8 +15,9 @@ initialhtml += `</container>`; // end main_game
 // Add all the divs to the HTML
 document.querySelector('#initial_load').innerHTML = initialhtml;
 
-  // end creation of HTML
+// end creation of HTML
 });
+//first game function
 let choosePlayerNumber = ``;
 function howManyPlayers(){
     var checkboxes = document.querySelectorAll('input');
@@ -37,18 +38,17 @@ function howManyPlayers(){
     choosePlayerhtml +=`</div>`;
     document.querySelector('#initial_load').innerHTML = choosePlayerhtml;
 }
-
+// read playernames from input and handover to game
 let playersNames = [];
 function writePlayersAndStartGame() {
     for (let k=1; k <= parseInt(choosePlayerNumber); k++) {
         playersNames.push(document.getElementById(`player_${k}`).value);
     }
-    startGame(playersNames);
+    startGame(playersNames); //start maingame 
 }
 
-/* test */
+//popup window for next players
 function createPopupObjectFromID(id) { //handover "mypopup" id
-console.log(document.getElementById(id));
     return document.getElementById(id);
 } 
 
@@ -56,18 +56,13 @@ let orgPlayerText = "";
 let newPlayerText ="";
 
 function showPopup(id, name) {
-    orgPlayerText = document.getElementById("playertext");
-    console.log(orgPlayerText);
-    console.log(name);
-    newPlayerText = document.createTextNode(`Naechster Spieler: ${name}`);
-    console.log(newPlayerText);
-    orgPlayerText.appendChild(newPlayerText);
+    orgPlayerText = document.getElementById("playertext"); //read string from popup html
+    newPlayerText = document.createTextNode(`Naechster Spieler: ${name}`); //create new string with playername
+    orgPlayerText.appendChild(newPlayerText); //create new text
     createPopupObjectFromID(id).style.display ='block'; // show popup and block background(game)
     
 }
 function hidePopup(id) {
     createPopupObjectFromID(id).style.display ='none'; // hide popup and reactivate background(game)
-    orgPlayerText.removeChild(newPlayerText);
-    console.log(`new playerText: ${newPlayerText}`);
-    console.log(document.getElementById("playertext"));
+    orgPlayerText.removeChild(newPlayerText); //reset string in popup
 }

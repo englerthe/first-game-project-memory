@@ -1,14 +1,40 @@
+/* main css */
 html {
     background: url("../img/background.jpg") no-repeat;
     background-size: cover;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Bungee Inline', cursive;
   }
+h1 {
+  letter-spacing: 2px;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+}
 
+ul {
+  list-style-type: none;
+}
+button {
+  display: inline-block;
+  border: none;
+  padding: 4px 8px;
+  margin: 0;
+  text-decoration: none;
+  background: rgba(75, 135, 215, 0.1);
+  color: red;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* container */
 #initial_load {
     display: flex;
     flex-direction: column;
   }
-
 #main_game {
     display: flex;
     flex-direction: row;
@@ -16,72 +42,56 @@ html {
 #start_game {
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(75, 135, 215, 0.1);
   color: red;
 }
-
 #memory_board {
-    background: rgba(255, 255, 255, 0.5);
-    width:800px;
-    height:540px;
+    background: rgba(75, 135, 215, 0.2);
+    width:744px;
+    height:496px;
     padding:10px;
     margin:0px 10px;
     border-radius: 40px;
-    box-shadow: inset 0px 0px 20px -6px #8f8f8f;
-  }
-
-  .card .back {
-    background-color: rgba(12, 156, 240, 0.3);
-    width:70px;
-    height:70px;
-    float:left;
-    margin:10px;
-    padding:20px;
-    font-size:64px;
-  }
-  .front {
-    background-size: contain; 
-  }
-
-  #finished {
+    box-shadow: 2px 2px 4px 2px #666666;
+}
+#finished {
     color:red;
     font-size: 50px;
     font-weight: bold;
-  }
- button {
-    display: inline-block;
-    border: none;
-    padding: 4px 8px;
-    margin: 0;
-    text-decoration: none;
-    background: rgba(12, 156, 240, 0.3);
-    color: red;
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  #score {
-    background: rgba(255, 255, 255, 0.3);
-    width:200px;
-    height:540px;
-    padding:10px;
-    border-radius: 40px;
-    box-shadow: inset 0px 0px 20px -6px #8f8f8f;
-    color:red;
-    font-size: 20px;
-    font-weight: bold;
-  }
+}
+#score {
+  background: rgba(75, 135, 215, 0.2);
+  width:300px;
+  height:496px;
+  padding:8px;
+  border-radius: 40px;
+  box-shadow: 2px 2px 4px 2px #666666;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  font-size: 16px;
+  font-weight: bold
+}
+#score_p_tag {
+  margin-left: auto; 
+  margin-right: auto;
+}
+/* cards */
+.card .back {
+    background-color: rgba(75, 135, 215, 0.4);
+    width:70px;
+    height:70px;
+    float:left;
+    margin:7px;
+    padding:20px;
+    font-size:64px;
+    box-shadow: 2px 2px 4px 2px #666666;
+}
+.front {
+    background-size: contain; 
+}
 
-  ul {
-    list-style-type: none;
-  }
-
-  /* popup test */
-  
-  .popup {
+  /* popup window */
+.popup {
     display: none;
     position: fixed;
     padding: 10px;
@@ -92,10 +102,9 @@ html {
     top: 50%;
     margin-top: -100px;
     background: #FFF;
-    z-index: 20;
-  }
-
-  #mypopup:after {
+    z-index: 1;
+}
+#mypopup:after {
     position: fixed;
     content: "";
     top: 0;
@@ -104,9 +113,8 @@ html {
     right: 0;
     background: rgba(0,0,0,0.5);
     z-index: -2;
-  }
-  
-  #mypopup:before {
+}
+#mypopup:before {
     position: absolute;
     content: "";
     top: 0;
@@ -115,6 +123,6 @@ html {
     right: 0;
     background: #FFF;
     z-index: -1;
-  }
+}
   
   
