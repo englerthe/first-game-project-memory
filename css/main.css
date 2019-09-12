@@ -11,19 +11,12 @@ h1 {
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
 }
-h2 {
-  letter-spacing: 2px;
-  font-size: 20px;
-  text-align: center;
-  color: white;
-  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
-  margin: 5px 0;
-}
 p {
   margin: 0 0;
   line-height: 40px;
   letter-spacing: 1px;
 }
+
 ul {
   list-style-type: none;
   color: white;
@@ -57,15 +50,16 @@ button {
 button:hover {
   background: rgba(75, 135, 215, 0.3);
 }
+button:focus {
+  outline: none;
+}
 label {
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
   margin: 0 10px;
   font-size: 20px;
 }
-form {
-  margin-left: 100px;
-}
+
 input[type="text"] {
   background-color: rgba(75, 135, 215, 0.2);
   color: white;
@@ -105,6 +99,7 @@ input[type="radio"] {
 #initial_load {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-left: 5%;
   }
 #main_game {
@@ -113,6 +108,7 @@ input[type="radio"] {
 }
 #start_game {
   display: flex;
+  justify-content: center;
   background: rgba(75, 135, 215, 0.0);
 }
 #memory_board {
@@ -132,20 +128,38 @@ input[type="radio"] {
   border-radius: 40px;
   box-shadow: 2px 2px 4px 2px #666666;
   color: white;
-  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.3em red, 0 0 0.3em black, 0 0 0.3em black, 0 0 0.3em black;
   font-size: 18px;
   font-weight: bold
 }
 
 #finished {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   color:red;
-  font-size: 50px;
+  text-shadow: 0 0 0.3em white, 0 0 0.3em white, 0 0 0.5em red;
+  font-size: 40px;
   font-weight: bold;
+  position: absolute;
+  padding: 10px;
+  left: 200px;
+  top: 300px;
+  z-index: 1;
+}
+#finished p {
+  margin-bottom: 5px;
 }
 
+#footer_information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 5%;
+  bottom: 10px;
+  z-index: 1;
+}
 /* cards */
 .card .back {
     background-color: rgba(75, 135, 215, 0.4);

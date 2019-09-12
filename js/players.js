@@ -44,7 +44,7 @@ class players {
         } else if (this.game.countPairsGuessed < this.game.cards.length/2) {
           return false;
         }
-        document.querySelector('#finished').innerHTML = `<p>Player ${this.name} hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
+        document.querySelector('#finished').innerHTML = `<p>Player<br> ${this.name} <br>hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
       }
     // in case of no pairs, flip cards back after timeout - to memorize cards :-)
     flipCardsBack() {

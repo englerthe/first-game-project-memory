@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //create HTML
 
 let initialhtml = '';
-initialhtml += `<h2>Bitte Anzahl der Spieler wählen</h2>`;
+initialhtml += `<label>Bitte Anzahl der Spieler wählen</label>`;
 initialhtml += `<div id="start_game">`; // begin start_game
 initialhtml += `<label><ul><li><input type="radio" name="Players" checked value="1">1 Spieler</li></ul></label>`;
 initialhtml += `<label><ul><li><input type="radio" name="Players" value="2">2 Spieler</li></ul></label>`;
@@ -32,7 +32,7 @@ function howManyPlayers(){
     choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben (max. 20 Zeichen)</label><br><br>`;
     for (let j = 1; j <= parseInt(choosePlayerNumber); j++) {
         choosePlayerhtml +=`<label>Spieler ${j}</label>`;
-        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="20"><br>`;
+        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="20" required><br>`;
     }
     choosePlayerhtml +=`<br><button onclick="writePlayersAndStartGame()">Spiel starten</button>`;
     choosePlayerhtml +=`</form>`;
