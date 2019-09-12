@@ -30,6 +30,16 @@ ul {
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
   padding-left: 10px;
 }
+li {
+  cursor: pointer;
+}
+li:hover {
+  display: inline-block;
+  border-radius: 18px;
+  box-shadow: 2px 2px 4px 2px #666666;
+  background-color: rgba(75, 135, 215, 0.3);
+
+}
 button {
   display: inline-block;
   border-radius: 30px;
@@ -56,7 +66,7 @@ label {
 form {
   margin-left: 100px;
 }
-input {
+input[type="text"] {
   background-color: rgba(75, 135, 215, 0.2);
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
@@ -67,9 +77,19 @@ input {
   padding-left: 10px;
   font-size: 16px;
 }
-input:hover {
+input[type="text"]:hover {
   background-color: rgba(75, 135, 215, 0.4);
 }
+input[type="text"]:focus {
+  outline: none;
+  background-color: rgba(75, 135, 215, 0.4);
+}
+input[type="radio"] {
+  transform: scale(1.5);
+  margin: 2px 4px;
+  cursor: pointer;
+}
+
 #initialpopup {
   visibility: hidden;
 }
@@ -118,6 +138,9 @@ input:hover {
 }
 
 #finished {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color:red;
   font-size: 50px;
   font-weight: bold;
