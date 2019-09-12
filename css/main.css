@@ -53,6 +53,7 @@ button:hover {
 button:focus {
   outline: none;
 }
+
 label {
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
@@ -150,16 +151,13 @@ input[type="radio"] {
 #finished p {
   margin-bottom: 5px;
 }
-
-#footer_information {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  left: 5%;
-  bottom: 10px;
-  z-index: 1;
+#finished button {
+  background: rgba(75, 135, 215, 0.5);
 }
+#finished button:hover {
+  background: rgba(75, 135, 215, 0.7);
+}
+
 /* cards */
 .card .back {
     background-color: rgba(75, 135, 215, 0.4);
