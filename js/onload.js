@@ -29,10 +29,10 @@ function howManyPlayers(){
     } 
     let choosePlayerhtml =`<div id="start_game">`;
     choosePlayerhtml +=`<form>`;
-    choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben (max. 25 Zeichen)</label><br><br>`;
+    choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben (max. 20 Zeichen)</label><br><br>`;
     for (let j = 1; j <= parseInt(choosePlayerNumber); j++) {
         choosePlayerhtml +=`<label>Spieler ${j}</label>`;
-        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="25"><br>`;
+        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="20"><br>`;
     }
     choosePlayerhtml +=`<br><button onclick="writePlayersAndStartGame()">Spiel starten</button>`;
     choosePlayerhtml +=`</form>`;

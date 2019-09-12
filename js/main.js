@@ -51,7 +51,7 @@ function startGame(handoverplayers) {
       html += `<div id="display_players">`; // begin display_players
       html += `<div id="score">`; // begin scoreboard
       memoryGame.players.forEach(Player => {
-        html += `<p>${Player.name}<br>`;
+        html += `<p>Spieler:  ${Player.name}<br>`;
         html += `Anzahl Versuche: <span id="pairs_clicked_${Player.name}" >0</span><br>`;
         html += `Anzahl Paare gefunden: <span id="pairs_guessed_${Player.name}" >0</span></p>`;
       });
