@@ -40,7 +40,6 @@ function startGame(handoverplayers) {
 //create HTML
     let html = '';
       //create Cards
-      html += `<div id="finished"></div>`; //finished
       html += `<div id="memory_board">`; //begin board
       memoryGame.cards.forEach(pic => {
         html += `<div class="card" data-card-name="${pic.name}">`; // begin cards
@@ -52,12 +51,13 @@ function startGame(handoverplayers) {
       html += `<div id="display_players">`; // begin display_players
       html += `<div id="score">`; // begin scoreboard
       memoryGame.players.forEach(Player => {
-        html += `<p id="score_p_tag">${Player.name}<br>`;
+        html += `<p>${Player.name}<br>`;
         html += `Anzahl Versuche: <span id="pairs_clicked_${Player.name}" >0</span><br>`;
         html += `Anzahl Paare gefunden: <span id="pairs_guessed_${Player.name}" >0</span></p>`;
       });
       html += `</div>`; // end scoreboard
       html += `</div>`; // end display_players
+      html += `<div id="finished"></div>`; //finished
       html += `</container>`; // end main_game
 
       //create Popup
@@ -65,7 +65,7 @@ function startGame(handoverplayers) {
       html += `<button id="initialpopup" onclick="showPopup('mypopup')"></button>`;
       html += `<div class="popup" id="mypopup">`;
       html += `<p id="playertext"></p>`;
-      html += `<button onclick="hidePopup('mypopup')">OK !</button>`;
+      html += `<button id="change_player" onclick="hidePopup('mypopup')">OK !</button>`;
       html += `</div>`;
       html += `</container>`;
 

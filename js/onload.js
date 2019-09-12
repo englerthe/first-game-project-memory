@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 //create HTML
 
 let initialhtml = '';
+initialhtml += `<h2>Bitte Anzahl der Spieler wählen</h2>`;
 initialhtml += `<div id="start_game">`; // begin start_game
 initialhtml += `<label><ul><li><input type="radio" name="Players" checked value="1">1 Spieler</li></ul></label>`;
 initialhtml += `<label><ul><li><input type="radio" name="Players" value="2">2 Spieler</li></ul></label>`;
 initialhtml += `<label><ul><li><input type="radio" name="Players" value="3">3 Spieler</li></ul></label>`;
 initialhtml += `<label><ul><li><input type="radio" name="Players" value="4">4 Spieler</li></ul></label>`;
 initialhtml += `</div>`; // end start_game
-initialhtml += `<button onclick="howManyPlayers()">Namen eingeben</button>`;
+initialhtml += `<button onclick="howManyPlayers()">Weiter geht´s, Namen eingeben</button>`;
 initialhtml += `</container>`; // end main_game
 
 // Add all the divs to the HTML
@@ -28,10 +29,10 @@ function howManyPlayers(){
     } 
     let choosePlayerhtml =`<div id="start_game">`;
     choosePlayerhtml +=`<form>`;
-    choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben</label><br><br>`;
+    choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben (max. 25 Zeichen)</label><br><br>`;
     for (let j = 1; j <= parseInt(choosePlayerNumber); j++) {
         choosePlayerhtml +=`<label>Spieler ${j}</label>`;
-        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="30">`;
+        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="25"><br>`;
     }
     choosePlayerhtml +=`<br><button onclick="writePlayersAndStartGame()">Spiel starten</button>`;
     choosePlayerhtml +=`</form>`;
@@ -57,7 +58,7 @@ let newPlayerText ="";
 
 function showPopup(id, name) {
     orgPlayerText = document.getElementById("playertext"); //read string from popup html
-    newPlayerText = document.createTextNode(`Naechster Spieler: ${name}`); //create new string with playername
+    newPlayerText = document.createTextNode(`Nächster Spieler: ${name}`); //create new string with playername
     orgPlayerText.appendChild(newPlayerText); //create new text
     createPopupObjectFromID(id).style.display ='block'; // show popup and block background(game)
     

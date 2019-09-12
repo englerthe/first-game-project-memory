@@ -11,32 +11,54 @@ h1 {
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
 }
-
+h2 {
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  margin: 5px 0;
+}
+p {
+  margin: 0 0;
+  line-height: 40px;
+}
 ul {
   list-style-type: none;
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  padding-left: 10px;
 }
 button {
   display: inline-block;
-  border: none;
+  border-radius: 30px;
+  box-shadow: 2px 2px 4px 2px #666666;
   padding: 4px 8px;
   margin: 0;
-  text-decoration: none;
-  background: rgba(75, 135, 215, 0.1);
+  background: rgba(75, 135, 215, 0.0);
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
   font-size: 20px;
-  font-weight: bold;
   cursor: pointer;
   text-align: center;
+  font-family: 'Bungee Inline', cursive;
 }
 label {
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  margin: 0 10px;
+}
+form {
+  margin-left: 100px;
 }
 #initialpopup {
   visibility: hidden;
+}
+#playertext {
+  text-align: center;
+}
+#change_player {
+  margin: auto;
 }
 
 /* container */
@@ -50,7 +72,7 @@ label {
 }
 #start_game {
   display: flex;
-  background: rgba(75, 135, 215, 0.1);
+  background: rgba(75, 135, 215, 0.0);
   color: red;
 }
 #memory_board {
@@ -71,7 +93,7 @@ label {
   box-shadow: 2px 2px 4px 2px #666666;
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold
 }
 #finished {
@@ -79,10 +101,7 @@ label {
   font-size: 50px;
   font-weight: bold;
 }
-#score_p_tag {
-  margin-left: auto; 
-  margin-right: auto;
-}
+
 /* cards */
 .card .back {
     background-color: rgba(75, 135, 215, 0.4);
