@@ -11,6 +11,13 @@ h1 {
   color: white;
   text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
 }
+h2 {
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  text-align: justify;
+}
 p {
   margin: 0 0;
   line-height: 35px;
@@ -95,13 +102,27 @@ input[type="radio"] {
   display: flex;
   margin: auto;
 }
+#regeln {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  min-width: 600px;
+  max-width: 600px;
+}
 
 /* container */
+#title_of_game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 800px;
+}
 #initial_load {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 5%;
+    min-width:700px;
   }
 #main_game {
     display: flex;
@@ -109,8 +130,10 @@ input[type="radio"] {
 }
 #start_game {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   background: rgba(75, 135, 215, 0.0);
+  min-width:700px;
 }
 #memory_board {
   background: rgba(75, 135, 215, 0.2);

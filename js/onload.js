@@ -11,6 +11,11 @@ initialhtml += `<label><ul><li><input type="radio" name="Players" value="3">3 Sp
 initialhtml += `<label><ul><li><input type="radio" name="Players" value="4">4 Spieler</li></ul></label>`;
 initialhtml += `</div>`; // end start_game
 initialhtml += `<button onclick="howManyPlayers()">Weiter geht´s, Namen eingeben</button>`;
+initialhtml += `<div id="regeln">`;
+initialhtml += `<h2>Regeln:<br>Das Spiel besteht aus 24 Feldern mit 12 gleichen Bildern. Ziel ist es möglichst viele Paare zu finden.
+Ein Spieler deckt zwei Felder auf, sind die Bilder identisch hat er ein Paar und darf noch einmal aufdecken.
+Sind die Bilder nicht gleich, ist der nächste Spieler dran.<br>Viel Spass!</h2>`;
+initialhtml += `</div>`;
 initialhtml += `</container>`; // end main_game
 
 // Add all the divs to the HTML

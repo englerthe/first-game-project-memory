@@ -55,7 +55,7 @@ class players {
             this.pickedCards[1].parentNode.childNodes[1].className = "front";
             this.pickedCards = [];
             this.game.switchPlayer(); // initiate to change player // flip selected cards back
-        }, 500);
+        }, 800);
     }
     
 }
