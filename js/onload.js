@@ -32,7 +32,7 @@ function howManyPlayers(){
     choosePlayerhtml +=`<label form="selectedplayers">Bitte Spielername eingeben (max. 20 Zeichen)</label><br><br>`;
     for (let j = 1; j <= parseInt(choosePlayerNumber); j++) {
         choosePlayerhtml +=`<label>Spieler ${j}</label>`;
-        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="20" required><br>`;
+        choosePlayerhtml +=`<input type="text" id="player_${j}" maxlength="20" required/><br>`;
     }
     choosePlayerhtml +=`<br><button onclick="writePlayersAndStartGame()">Spiel starten</button>`;
     choosePlayerhtml +=`</form>`;
@@ -43,7 +43,12 @@ function howManyPlayers(){
 let playersNames = [];
 function writePlayersAndStartGame() {
     for (let k=1; k <= parseInt(choosePlayerNumber); k++) {
-        playersNames.push(document.getElementById(`player_${k}`).value);
+        if (document.getElementById(`player_${k}`).value == ``){
+            playersNames.push(`Spieler ${k}`);
+        } else {
+            playersNames.push(document.getElementById(`player_${k}`).value);
+        }
+        //playersNames.push(document.getElementById(`player_${k}`).value);
     }
     startGame(playersNames); //start maingame 
 }

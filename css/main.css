@@ -13,7 +13,7 @@ h1 {
 }
 p {
   margin: 0 0;
-  line-height: 40px;
+  line-height: 35px;
   letter-spacing: 1px;
 }
 
@@ -113,18 +113,21 @@ input[type="radio"] {
   background: rgba(75, 135, 215, 0.0);
 }
 #memory_board {
-    background: rgba(75, 135, 215, 0.2);
-    width:744px;
-    height:496px;
-    padding:10px;
-    margin:0px 10px;
-    border-radius: 40px;
-    box-shadow: 2px 2px 4px 2px #666666;
+  background: rgba(75, 135, 215, 0.2);
+  min-width:744px;
+  min-height:496px;
+  padding:10px;
+  margin:0px 10px;
+  border-radius: 40px;
+  box-shadow: 2px 2px 4px 2px #666666;
 }
 #score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background: rgba(75, 135, 215, 0.2);
-  width:380px;
-  height:496px;
+  min-width:380px;
+  min-height:496px;
   padding:8px;
   border-radius: 40px;
   box-shadow: 2px 2px 4px 2px #666666;
