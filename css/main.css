@@ -1,81 +1,240 @@
+/* main css */
 html {
     background: url("../img/background.jpg") no-repeat;
     background-size: cover;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Bungee Inline', cursive;
   }
-
-#start_game {
-  display: flex;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.5);
-  color: red;
+h1 {
+  letter-spacing: 2px;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+}
+h2 {
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  text-align: justify;
+}
+p {
+  margin: 0 0;
+  line-height: 35px;
+  letter-spacing: 1px;
 }
 
+ul {
+  list-style-type: none;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  padding-left: 10px;
+}
+li {
+  cursor: pointer;
+}
+li:hover {
+  display: inline-block;
+  border-radius: 18px;
+  box-shadow: 2px 2px 4px 2px #666666;
+  background-color: rgba(75, 135, 215, 0.3);
+
+}
+button {
+  display: inline-block;
+  border-radius: 30px;
+  box-shadow: 2px 2px 4px 2px #666666;
+  padding: 4px 8px;
+  margin: 0;
+  background: rgba(75, 135, 215, 0.0);
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+}
+button:hover {
+  background: rgba(75, 135, 215, 0.3);
+}
+button:focus {
+  outline: none;
+}
+
+label {
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  background-color: rgba(75, 135, 215, 0.2);
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+  box-shadow: 2px 2px 4px 2px #666666;
+  font-family: 'Bungee Inline', cursive;
+  border-radius: 24px;
+  margin: 2px 0;
+  padding-left: 10px;
+  font-size: 16px;
+}
+input[type="text"]:hover {
+  background-color: rgba(75, 135, 215, 0.4);
+}
+input[type="text"]:focus {
+  outline: none;
+  background-color: rgba(75, 135, 215, 0.4);
+}
+input[type="radio"] {
+  transform: scale(1.5);
+  margin: 2px 4px;
+  cursor: pointer;
+}
+
+#initialpopup {
+  visibility: hidden;
+}
+#playertext {
+  text-align: center;
+}
+#change_player {
+  display: flex;
+  margin: auto;
+}
+#regeln {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  min-width: 600px;
+  max-width: 600px;
+}
+
+/* container */
+#title_of_game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 800px;
+}
+#initial_load {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    min-width:700px;
+  }
 #main_game {
     display: flex;
     flex-direction: row;
 }
-#initial_load {
+#start_game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: rgba(75, 135, 215, 0.0);
+  min-width:700px;
+}
+#memory_board {
+  background: rgba(75, 135, 215, 0.2);
+  min-width:744px;
+  min-height:496px;
+  padding:10px;
+  margin:0px 10px;
+  border-radius: 40px;
+  box-shadow: 2px 2px 4px 2px #666666;
+}
+#score {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  background: rgba(75, 135, 215, 0.2);
+  min-width:380px;
+  min-height:496px;
+  padding:8px;
+  border-radius: 40px;
+  box-shadow: 2px 2px 4px 2px #666666;
+  color: white;
+  text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.3em red, 0 0 0.3em black, 0 0 0.3em black, 0 0 0.3em black;
+  font-size: 18px;
+  font-weight: bold
 }
 
-#memory_board {
-    background: rgba(255, 255, 255, 0.5);
-    width:800px;
-    height:540px;
-    padding:10px;
-    margin:0px 10px;
-    border-radius: 40px;
-    box-shadow: inset 0px 0px 20px -6px #8f8f8f;
-  }
+#finished {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color:red;
+  text-shadow: 0 0 0.3em white, 0 0 0.3em white, 0 0 0.5em red;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  padding: 10px;
+  left: 200px;
+  top: 300px;
+  z-index: 1;
+}
+#finished p {
+  margin-bottom: 5px;
+}
+#finished button {
+  background: rgba(75, 135, 215, 0.5);
+}
+#finished button:hover {
+  background: rgba(75, 135, 215, 0.7);
+}
 
-  .card .back {
-    background-color: rgba(12, 156, 240, 0.3);
+/* cards */
+.card .back {
+    background-color: rgba(75, 135, 215, 0.4);
     width:70px;
     height:70px;
     float:left;
-    margin:10px;
+    margin:7px;
     padding:20px;
     font-size:64px;
-  }
-  .front {
+    box-shadow: 2px 2px 4px 2px #666666;
+}
+.back:hover {
+  background-color: rgba(75, 135, 215, 0.8);
+}
+.front {
     background-size: contain; 
-  }
+}
 
-  #finished {
-    color:red;
-    font-size: 50px;
-    font-weight: bold;
-  }
- button {
-    display: inline-block;
-    border: none;
-    padding: 4px 8px;
-    margin: 0;
-    text-decoration: none;
-    background: rgba(12, 156, 240, 0.3);
-    color: red;
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-  }
+  /* popup window */
+.popup {
+    display: none;
+    position: fixed;
+    padding: 10px;
+    width: 340px;
+    height: 150px;
+    left: 220px;
+    top: 300px;
+    z-index: 1;
+    color: white;
+    text-shadow: 0 0 0.3em red, 0 0 0.3em red, 0 0 0.5em black;
+}
+#mypopup:after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -2;
+}
+#mypopup:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(75, 135, 215, 0.8);
+    box-shadow: inset 2px 2px 2px 2px #bebebe, 2px 2px 2px 2px rgba(75, 135, 215, 0.5);
+    z-index: -1;
+}
   
-  #score {
-    background: rgba(255, 255, 255, 0.3);
-    width:200px;
-    height:540px;
-    padding:10px;
-    border-radius: 40px;
-    box-shadow: inset 0px 0px 20px -6px #8f8f8f;
-    color:red;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  ul {
-    list-style-type: none;
-  }
   
