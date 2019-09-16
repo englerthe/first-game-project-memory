@@ -15,6 +15,8 @@ class players {
         if (this.pickedCards[0].getAttribute("name") === this.pickedCards[1].getAttribute("name")) {
           this.pairsGuessed +=1;
           this.game.countPairsGuessed += 1;
+          this.game.countPlayersPairsGuessed.push(this.name);
+          console.log(this.game.countPlayersPairsGuessed);
           document.getElementById(`pairs_guessed_${this.name}`).innerHTML = this.pairsGuessed;
           return true;
         }
@@ -44,7 +46,11 @@ class players {
         } else if (this.game.countPairsGuessed < this.game.cards.length/2) {
           return false;
         }
-        document.querySelector('#finished').innerHTML = `<p>Spieler<br> ${this.name} <br>hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
+        let winnerArray = this.game.players.reduce((acc,elem) => acc + elem);
+        console.log(winnerArray);
+        let winner = this.game.countPlayersPairsGuessed.sort();      
+        console.log(winner);
+        document.querySelector('#finished').innerHTML = `<p>Spieler<br> ${winner[0]} <br>hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
       }
     // in case of no pairs, flip cards back after timeout - to memorize cards :-)
     flipCardsBack() {
