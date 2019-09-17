@@ -15,8 +15,7 @@ class players {
         if (this.pickedCards[0].getAttribute("name") === this.pickedCards[1].getAttribute("name")) {
           this.pairsGuessed +=1;
           this.game.countPairsGuessed += 1;
-          this.game.countPlayersPairsGuessed.push(this.name);
-          console.log(this.game.countPlayersPairsGuessed);
+          //this.game.countPlayersPairsGuessed.push(this.name); //schreibe Spielername in array - workaround
           document.getElementById(`pairs_guessed_${this.name}`).innerHTML = this.pairsGuessed;
           return true;
         }
@@ -41,16 +40,31 @@ class players {
     }
     // check if player has won
     isFinished() {
-        if (this.pairsClicked < 1) {
+        if (this.pairsClicked < 1) { //sind 2 Karten aufgedeckt worden?
           return false;
-        } else if (this.game.countPairsGuessed < this.game.cards.length/2) {
+        } else if (this.game.countPairsGuessed < this.game.cards.length/2) { // sind schon alle Karten offen?
           return false;
         }
-        let winnerArray = this.game.players.reduce((acc,elem) => acc + elem);
-        console.log(winnerArray);
-        let winner = this.game.countPlayersPairsGuessed.sort();      
-        console.log(winner);
-        document.querySelector('#finished').innerHTML = `<p>Spieler<br> ${winner[0]} <br>hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
+        let winner = "";
+        for (let i=0; i < (this.game.players.length - 1) ;i++) { //fuehre fuer jeden Spieler die Pruefung aus (letzte muss nicht)
+          if (this.game.players[i].pairsGuessed > this.game.players[i+1].pairsGuessed) { //habe ich mehr Paare gefunden als der naechste? 
+            winner = this.game.players[i].name;
+          }
+          else if (this.game.players[i].pairsGuessed == this.game.players[i+1].pairsGuessed) { //wenn ich gleichviel habe...
+            if (this.game.players[i].pairsClicked < this.game.players[i+1].pairsClicked) { // ...habe ich weniger Versuche?
+              winner = this.game.players[i].name;
+            }
+            else {
+              winner = this.game.players[i+1].name; // naechster Spieler hat weniger Versuche :)
+            }
+          }
+          else {
+            winner = this.game.players[i+1].name; // naechster Spieler hat mehr Paare gefunden.
+          }
+        }
+        //let winner = this.game.countPlayersPairsGuessed.sort(); //sortiere array (meiste elemente sind vorne) nur ein workaround!
+        //document.querySelector('#finished').innerHTML = `<p>Spieler<br> ${winner[0]} <br>hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
+        document.querySelector('#finished').innerHTML = `<p>Spieler<br> ${winner} <br>hat gewonnen !</p><button onclick="location.reload()">Neues Spiel</button>`;
       }
     // in case of no pairs, flip cards back after timeout - to memorize cards :-)
     flipCardsBack() {

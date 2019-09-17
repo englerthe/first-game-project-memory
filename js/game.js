@@ -5,7 +5,7 @@ class MemoryGame {
       this.turn = 0;
       this.activePlayer = players[this.turn];
       this.countPairsGuessed = 0;
-      this.countPlayersPairsGuessed = [];
+      // this.countPlayersPairsGuessed = []; workaround
     }
     startPlay() {
       this.shuffleCards();
@@ -20,7 +20,7 @@ class MemoryGame {
         this.cards.splice(randomIndex, 1); // der ermittelte Wert wird aus dem card Array entfernt
       }
       this.cards = newCards;
-      console.log(this.cards);
+      console.log(this.cards); // cheat
     }
   
     switchPlayer(){
