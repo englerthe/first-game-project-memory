@@ -50,16 +50,11 @@ class players {
           if (this.game.players[i].pairsGuessed > this.game.players[i+1].pairsGuessed) { //habe ich mehr Paare gefunden als der naechste? 
             winner = this.game.players[i].name;
           }
-          else if (this.game.players[i].pairsGuessed == this.game.players[i+1].pairsGuessed) { //wenn ich gleichviel habe...
-            if (this.game.players[i].pairsClicked < this.game.players[i+1].pairsClicked) { // ...habe ich weniger Versuche?
+          else if (this.game.players[i].pairsGuessed == this.game.players[i+1].pairsGuessed && this.game.players[i].pairsClicked < this.game.players[i+1].pairsClicked) { //wenn ich gleichviel Paare habe aber weniger Versuche ... 
               winner = this.game.players[i].name;
-            }
-            else {
-              winner = this.game.players[i+1].name; // naechster Spieler hat weniger Versuche :)
-            }
           }
           else {
-            winner = this.game.players[i+1].name; // naechster Spieler hat mehr Paare gefunden.
+            winner = this.game.players[i+1].name; // naechster Spieler hat mehr Paare gefunden oder gleiche Anzahl Paare und Versuche
           }
         }
         //let winner = this.game.countPlayersPairsGuessed.sort(); //sortiere array (meiste elemente sind vorne) nur ein workaround!
